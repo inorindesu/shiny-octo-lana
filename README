@@ -1,0 +1,7 @@
+This is a repository storing a xelatex example file.
+
+To create pdf file from the xelatex source:
+
+inkscape Usage.svg -A Usage.pdf
+mkdir build
+xelatex -output-directory=./build ../main.tex
