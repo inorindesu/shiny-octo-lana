@@ -5,8 +5,11 @@
 \usepackage{adjustbox}
 \usepackage{graphicx}
 \usepackage{wrapfig}
+\usepackage{xcolor}
+\usepackage{listings}
 
 \setCJKmainfont{WenQuanYi Micro Hei}
+\setCJKmonofont{WenQuanYi Micro Hei Mono}
 \setromanfont{Droid Serif}
 \setmonofont{Droid Sans Mono}
 \parindent 2em
@@ -364,7 +367,7 @@ Mozilla Firefox自推出之後便得到許多的獎項，包含了：
 
 % SVG cannot be used directly
 % converted pdf file is used instead.
-\begin{wrapfigure}{L}{0.5\textwidth}
+\begin{wrapfigure}{l}{0.5\textwidth}
   \begin{center}
     \includegraphics[width=70mm]{Usage}
   \end{center}
@@ -392,6 +395,33 @@ Firefox當作Windows業務競爭對手[105]。
 然而，從2012年開始，Firefox的市佔率有所衰退，主因是競爭對手Google
 Chrome市佔率的大幅增加。但仍與IE、Chrome保持「三足鼎立」局面。
 
-\section{下略}
+\section{程式碼測試（不是原始條目的一部分）}
+來一段Haskell程式碼！
+
+% Use literate replacement to prevent '--' -> long dash conversion!
+\begin{lstlisting}[language=Haskell, extendedchars=true, literate={--}{{\texttt{--}}}{2}]
+module Main where
+-- 中文註解
+main :: IO ()
+main = putStrLn "Hello, World!"
+\end{lstlisting}
+
+另外來一段C程式碼！
+
+% modified from wikibook
+% http://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+  literate={--}{{\texttt{--}}}{2},
+}
+\lstinputlisting[style=customc, extendedchars=true]{ccode.c}
 
 \end{document}
